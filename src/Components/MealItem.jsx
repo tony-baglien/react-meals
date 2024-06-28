@@ -12,7 +12,7 @@ const MealItem = ({ meal }) => {
     <li className="meal-item">
       <article>
         <div>
-          <img src={`http://localhost:3000/${meal.image}`} alt={meal.name} />
+          <img src={`${import.meta.env.VITE_API_GENERAL_URL}/${meal.image}`} alt={meal.name} />
           <h3>{meal.name}</h3>
           <p className="meal-item-price">{currencyFormatter(meal.price)}</p>
           <p className="meal-item-description">{meal.description}</p>

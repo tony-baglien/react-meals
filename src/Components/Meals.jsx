@@ -2,14 +2,17 @@ import MealItem from "./MealItem.jsx";
 import useHttp from "../Hooks/useHttp.js";
 import Error from "./Error.jsx";
 
+
 const requestConfig = {};
 
 const Meals = () => {
+  console.log(import.meta.env)
+
   const {
     data: loadedMeals,
     isLoading,
     error,
-  } = useHttp("http://localhost:3000/meals",requestConfig,[]);
+  } = useHttp(import.meta.env.VITE_API_MEALS_URL,requestConfig,[]);
   
   if (isLoading) {
     return <p className="center">Fetching meals...</p>

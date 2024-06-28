@@ -24,7 +24,7 @@ const Checkout = () => {
     error,
     sendRequest,
     clearData
-  } = useHttp("http://localhost:3000/orders", requestConfig);
+  } = useHttp(import.meta.env.VITE_API_ORDER_URL, requestConfig);
   let cartPrice = cartCtx.items.reduce(
     (totalPrice, item) => totalPrice + item.quantity * item.price,
     0,
